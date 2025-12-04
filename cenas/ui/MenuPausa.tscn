@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://mw3n24ssif0q"]
+[gd_scene load_steps=2 format=3 uid="uid://mw3n24ssif0q"]
+
+[ext_resource type="Script" uid="uid://cmbmlblwj6ces" path="res://scripts/resumir.gd" id="1_j8kr1"]
 
 [node name="MenuPausa" type="Control"]
 layout_mode = 3
@@ -7,3 +9,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Resumir" type="Button" parent="."]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 372.0
+offset_right = 617.0
+offset_bottom = 403.0
+focus_mode = 0
+text = "Resumir"
+script = ExtResource("1_j8kr1")
+
+[node name="MenuPrincipal" type="Button" parent="."]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 416.0
+offset_right = 643.0
+offset_bottom = 447.0
+focus_mode = 0
+text = "Menu principal"

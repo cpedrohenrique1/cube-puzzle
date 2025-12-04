@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://g0b21hjy2v8p"]
+[gd_scene load_steps=3 format=3 uid="uid://g0b21hjy2v8p"]
+
+[ext_resource type="Script" uid="uid://nievbntjw3fr" path="res://scripts/iniciar.gd" id="1_gnb25"]
+[ext_resource type="Script" uid="uid://regh1aexvikl" path="res://scripts/sair.gd" id="2_cjnmp"]
 
 [node name="TelaInicial" type="Control"]
 layout_mode = 3
@@ -7,3 +10,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="IniciarJogo" type="Button" parent="."]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 429.0
+offset_right = 628.0
+offset_bottom = 460.0
+focus_mode = 0
+text = "Iniciar jogo"
+script = ExtResource("1_gnb25")
+
+[node name="Sair" type="Button" parent="."]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 469.0
+offset_right = 602.0
+offset_bottom = 500.0
+focus_mode = 0
+text = "Sair"
+script = ExtResource("2_cjnmp")
+
+[connection signal="pressed" from="IniciarJogo" to="IniciarJogo" method="_on_pressed"]
+[connection signal="pressed" from="Sair" to="Sair" method="_on_pressed"]
