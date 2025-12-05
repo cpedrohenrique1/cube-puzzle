@@ -11,5 +11,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_pressed() -> void:
+func _on_pressed_iniciar() -> void:
+	get_tree().change_scene_to_file("res://cenas/niveis/CubeGame.tscn")
+
+
+func _on_pressed_sair() -> void:
 	get_tree().quit()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://g0b21hjy2v8p"]
 
-[ext_resource type="Script" uid="uid://nievbntjw3fr" path="res://scripts/iniciar.gd" id="1_gnb25"]
-[ext_resource type="Script" uid="uid://regh1aexvikl" path="res://scripts/sair.gd" id="2_cjnmp"]
+[ext_resource type="Script" uid="uid://byhoiumwihpre" path="res://scripts/main_menu.gd" id="1_gnb25"]
+[ext_resource type="Texture2D" uid="uid://dd5yra2yo3oks" path="res://assets/background/background.jpg" id="2_cjnmp"]
 
 [node name="TelaInicial" type="Control"]
 layout_mode = 3
@@ -11,25 +11,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="IniciarJogo" type="Button" parent="."]
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="IniciarJogo" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 534.0
-offset_top = 429.0
-offset_right = 628.0
-offset_bottom = 460.0
+offset_left = 758.0
+offset_top = 38.0
+offset_right = 1107.0
+offset_bottom = 116.0
 focus_mode = 0
 text = "Iniciar jogo"
 script = ExtResource("1_gnb25")
 
-[node name="Sair" type="Button" parent="."]
+[node name="Sair" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 564.0
-offset_top = 469.0
-offset_right = 602.0
-offset_bottom = 500.0
+offset_left = 759.0
+offset_top = 135.0
+offset_right = 1109.0
+offset_bottom = 214.0
 focus_mode = 0
 text = "Sair"
-script = ExtResource("2_cjnmp")
+script = ExtResource("1_gnb25")
 
-[connection signal="pressed" from="IniciarJogo" to="IniciarJogo" method="_on_pressed"]
-[connection signal="pressed" from="Sair" to="Sair" method="_on_pressed"]
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(579, 321.99997)
+scale = Vector2(0.3103009, 0.31030092)
+texture = ExtResource("2_cjnmp")
+
+[connection signal="pressed" from="Control/IniciarJogo" to="Control/IniciarJogo" method="_on_pressed_iniciar"]
+[connection signal="pressed" from="Control/Sair" to="Control/Sair" method="_on_pressed_sair"]
