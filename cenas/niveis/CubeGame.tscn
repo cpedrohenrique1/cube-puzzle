@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqp17fn4ds2gq"]
+[gd_scene load_steps=7 format=3 uid="uid://dqp17fn4ds2gq"]
 
 [ext_resource type="Script" uid="uid://dpd5kj8jtc7uv" path="res://scripts/cube_game.gd" id="1_t2gvo"]
 [ext_resource type="PackedScene" uid="uid://o2h06apfh42w" path="res://cenas/objetos/cube.tscn" id="1_w4l76"]
 [ext_resource type="Script" uid="uid://ce3rwbl6h2qrm" path="res://scripts/camera_orbit.gd" id="3_74av0"]
+[ext_resource type="Texture2D" uid="uid://c5u13412qjym5" path="res://assets/background/serra.jpg" id="4_2u326"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehgjo"]
+albedo_texture = ExtResource("4_2u326")
+
+[sub_resource type="SphereMesh" id="SphereMesh_2qx8c"]
+material = SubResource("StandardMaterial3D_ehgjo")
+flip_faces = true
 
 [node name="CubeGame" type="Node3D"]
 script = ExtResource("1_t2gvo")
@@ -18,9 +26,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 script = ExtResource("3_74av0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="PivoCamera"]
-transform = Transform3D(1, 0, 0, 0, 0.84663934, 0.5321672, 0, -0.5321672, 0.84663934, 0, 0, 0)
+light_energy = 0.5
+shadow_blur = 10.0
 
 [node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Reset" type="Button" parent="HUD"]
+offset_left = 1039.0
+offset_top = 600.0
+offset_right = 1137.0
+offset_bottom = 631.0
+text = "Reset"
 
 [node name="Button" type="Button" parent="HUD"]
 anchors_preset = 3
@@ -28,14 +44,26 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -116.0
-offset_top = -48.0
-offset_right = -17.0
-offset_bottom = -17.0
+offset_left = -115.0
+offset_top = -92.0
+offset_right = -16.0
+offset_bottom = -61.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
 text = "Embaralhar"
 metadata/_edit_use_anchors_ = true
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
+mesh = SubResource("SphereMesh_2qx8c")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.6578749, -0.4455858, 0.60716873, 0, 0.8061969, 0.59164745, -0.75312734, -0.38923, 0.5303767, 0, 0, 0)
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 10.0
+
+[connection signal="pressed" from="HUD/Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="HUD/Button" to="." method="_on_button_pressed"]

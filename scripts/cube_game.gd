@@ -226,3 +226,7 @@ func embaralhar_cubo():
 
 func _on_button_pressed() -> void:
 	embaralhar_cubo()
+
+
+func _on_reset_pressed() -> void:
+	get_tree().change_scene_to_file("res://cenas/niveis/CubeGame.tscn")
