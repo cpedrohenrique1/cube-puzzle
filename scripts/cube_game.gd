@@ -1,5 +1,7 @@
 extends Node3D
 
+const TELA_VITORIA_CENA = preload("res://cenas/ui/TelaVitoria.tscn")
+
 @onready var cubo_pai = $cube
 @onready var pivo = $PivoRotacao
 @onready var camera = $PivoCamera/Camera3D
@@ -197,8 +199,15 @@ func verificar_vitoria():
 		for cor in lista:
 			if cor != cor_base: return # Cores misturadas
 	
-	print("VITÓRIA")
+	#print("VITÓRIA")
 	# Adicione aqui: get_tree().quit() ou UI de vitória
+	var tela = TELA_VITORIA_CENA.instantiate()
+	add_child(tela)
+	
+	# Impede cliques no jogo 3D enquanto a tela de vitória estiver aberta
+	set_process_input(false) 
+	embaralhando = true
+	
 
 func embaralhar_cubo():
 	if girando or embaralhando: return
