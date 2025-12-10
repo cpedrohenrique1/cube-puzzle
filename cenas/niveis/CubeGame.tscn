@@ -55,11 +55,11 @@ text = "Embaralhar"
 metadata/_edit_use_anchors_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-37.677147, 0, -13.432528, 0, 40, 0, 13.432528, 0, -37.677147, 0, 0, 0)
+transform = Transform3D(-75.354294, 0, -26.865055, 0, 80, 0, 26.865055, 0, -75.354294, 0, 0, 0)
 mesh = SubResource("SphereMesh_2qx8c")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.6578749, -0.4455858, 0.60716873, 0, 0.8061969, 0.59164745, -0.75312734, -0.38923, 0.5303767, 0, 0, 0)
+transform = Transform3D(0.6578748, -0.4455858, 0.60716885, 0, 0.80619687, 0.5916474, -0.7531273, -0.38922992, 0.5303766, 0, 0, 0)
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0
 shadow_enabled = true
