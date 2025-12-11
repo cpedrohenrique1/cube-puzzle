@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dqhah0g4c6atm"]
+
+[resource]
+resource_name = "PLASTICO"
+cull_mode = 2
+albedo_color = Color(0.3491902, 0.3491902, 0.3491902, 1)
+roughness = 0.6
+rim_enabled = true
+rim = 0.2
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.2
+uv1_scale = Vector3(10, 10, 10)
+uv1_triplanar = true

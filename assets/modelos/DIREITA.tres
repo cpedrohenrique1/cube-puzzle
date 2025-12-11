@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ckw0qwyi3u1gi"]
+
+[resource]
+resource_name = "DIREITA"
+cull_mode = 2
+albedo_color = Color(1, 0, 0, 1)
+roughness = 0.7
+rim_enabled = true
+rim = 0.2
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.2
+uv1_scale = Vector3(10, 10, 10)
+uv1_triplanar = true

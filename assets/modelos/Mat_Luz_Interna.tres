@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bpqtdj1d5dgb8"]
+
+[resource]
+resource_name = "Mat_Luz_Interna"
+cull_mode = 2
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 5.0
+rim_enabled = true
+rim = 0.2
+uv1_scale = Vector3(10, 10, 10)
