@@ -1,10 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqp17fn4ds2gq"]
+[gd_scene load_steps=10 format=3 uid="uid://dqp17fn4ds2gq"]
 
 [ext_resource type="Script" uid="uid://dpd5kj8jtc7uv" path="res://scripts/cube_game.gd" id="1_t2gvo"]
 [ext_resource type="PackedScene" uid="uid://o2h06apfh42w" path="res://cenas/objetos/cube.tscn" id="1_w4l76"]
 [ext_resource type="Script" uid="uid://ce3rwbl6h2qrm" path="res://scripts/camera_orbit.gd" id="3_74av0"]
 [ext_resource type="Texture2D" uid="uid://c5u13412qjym5" path="res://assets/background/serra.jpg" id="4_2u326"]
 [ext_resource type="PackedScene" uid="uid://mw3n24ssif0q" path="res://cenas/ui/MenuPausa.tscn" id="5_ehgjo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehgjo"]
+content_margin_left = 15.0
+content_margin_top = 8.0
+content_margin_right = 15.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 0.64705884)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qx8c"]
+content_margin_left = 15.0
+content_margin_top = 8.0
+content_margin_right = 15.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 0.64705884)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehgjo"]
 albedo_texture = ExtResource("4_2u326")
@@ -53,6 +75,22 @@ grow_vertical = 0
 focus_mode = 0
 text = "Embaralhar"
 metadata/_edit_use_anchors_ = true
+
+[node name="LabelTempo" type="Label" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -41.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ehgjo")
+text = "00:00"
+
+[node name="LabelMovimentos" type="Label" parent="HUD"]
+offset_right = 114.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_2qx8c")
+text = "Movimentos: 0"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-75.354294, 0, -26.865055, 0, 80, 0, 26.865055, 0, -75.354294, 0, 0, 0)

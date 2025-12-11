@@ -7,7 +7,7 @@ content_margin_left = 20.0
 content_margin_top = 20.0
 content_margin_right = 20.0
 content_margin_bottom = 20.0
-bg_color = Color(0.00031439005, 0.20907724, 0.6955065, 1)
+bg_color = Color(0.70980394, 0.73333335, 0.75686276, 1)
 
 [node name="TelaVitoria" type="CanvasLayer"]
 script = ExtResource("1_x5pd4")
